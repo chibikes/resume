@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chibuike Okoh</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<img src="profile_picture.jpg" height="100" width="100"/>
+<h1>
+    CHIBUIKE FRANCIS OKOH
+</h1>
+<div>
+    FCT Abuja | okoh_chibuike@yahoo.com | +234(0)8025154099 | <a href="https://www.github.com/chibikes">github.com/chibikes</a>
+</div>
+<section class="professional-summary">
+    <div>
+        <div>
+            <h2>
+                PROFESSIONAL SUMMARY
+            </h2>
+        </div>
+    </div>
+
+    <div>
+        A highly skilled software developer with excellent problem-solving abilities and a
+        passion for building user-friendly applications. I worked at Mada Water Works,
+        Nasarawa State—a water processing plant—where I collaborated with the technical
+        team to ensure smooth and uninterrupted operations. I also taught students essential
+        computer skills during my time there. Currently, as a software developer at Fardelins
+        Technology, I focus on creating innovative solutions that meet industry standards and
+        contribute to client success.
+    </div>
+</section>
+<section class="skills-section">
+    <h2>
+        SKILLS AND COMPETENCIES
+    </h2>
+    <div>
+        <div>
+            <span>Technical Skills: </span> Flutter, Android app development, Javascript, React, Git, Linux,
+            Material Design
+        </div>
+        <br>
+        <div>
+            <span>Soft Skills: </span> Strong communication skills, Team Player, Strong presentation skills.
+        </div>
+    </div>
+</section>
+<section class="experience-section">
+    <div>
+        <h2>
+            WORK EXPERIENCE
+        </h2>
+    </div>
+
+    <div>
+        <div>
+            <span>Software Engineer</span> | February 2022 - present
+        </div>
+        <div class="location">
+            Fardelilns Technology, Abuja
+        </div>
+        <div>
+            <ul>
+                <li>Contributed to the development of two mobile applications, collaborating
+                    closely with backend and UI teams to ensure seamless functionality and an
+                    optimal user experience.</li>
+                <li>Integrated RESTful APIs into Flutter applications, enhancing data flow and
+                    backend communication, while ensuring efficient state management.</li>
+                <li>Actively participated in code reviews, ensuring code quality and adherence to
+                    best practices across the development team.</li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div>
+            <span>Engineering intern</span> | 23 October 2018 - 22 October 2019
+        </div>
+        <div class="location">
+            Fardelilns Technology, Abuja
+        </div>
+        <div>
+            <ul>
+                <li>Organized and delivered lectures to teach industrial training students how to
+                    use computers effectively.</li>
+                <li>Collaborated with the electrical and technical teams to resolve issues, ensuring
+                    24-hour operation of the facility.</li>
+                <li>Resolved technical issues related to computer systems and provided strategic
+                    recommendations for improvements as needed.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="project-section">
+    <div>
+        <h2>PROJECTS AND VOLUNTEER EXPERIENCE</h2>
+    </div>
+    <div>
+        <div>
+            <span>Mobile App Developer</span> | August 2024 - December 2024
+        </div>
+        <div class="location">
+            Prime Time Pal, Lagos
+        </div>
+        <div>
+            <ul>
+                <li>Mentored less experienced developers on Flutter development, ensuring
+                    alignment with project goals and development standards.</li>
+                <li>Improved app performance by refactoring code and optimizing build processes,
+                    reducing app launch times by 30%.</li>
+                <li>Collaborated closely with the backend team to integrate REST APIs into the
+                    mobile application.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="education-section">
+    <div>
+        <h2>EDUCATION</h2>
+    </div>
+    <div>
+        <span>B.Eng, Chemical Engineering, Second Class Upper</span> | January 2013 − June 2018
+    </div>
+    <div>
+        University of Port Harcourt
+    </div>
+</section>
+<section class="certifications-section">
+    <div>
+        <h2>CERTIFICATIONS</h2>
+    </div>
+    <div>Udacity Full Stack Developer</div>
+    <br>
+    <div>Google Africa Developer (GADS)</div>
+</section>
+<section class="gallery-section">
+    <div>
+        <h2>MY PICTURES</h2>
+    </div>
+    <div class="image-grid">
+        <div class="image-item">
+            <img src="profile_picture.jpg" height="200" width="200"/>
+        </div>
+        <div class="image-item">
+            <img src="photo_1.jpg" height="200" width="200"/>
+        </div>
+        <div>
+            <img src="photo_2.jpg" height="200" width="200"/>
+        </div>
+
+        <div class="image-item">
+            <img src="photo_3.jpg" height="200" width="200"/>
+        </div>
+        <div class="image-item">
+            <img src="berlin.jpg" height="200" width="200"/>
+        </div>
+    </div>
+</section>
+
+<div id="imageModal" class="modal">
+    <span class="close-button">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<!-- script section -->
+<script>
+    // Get all images
+    const images = document.querySelectorAll('.image-item img');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeButton = document.querySelector('.close-button');
+
+    // Add click event to each image
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+            // Force reflow
+            modal.offsetHeight;
+            modal.classList.add('show');
+        });
+    });
+
+    // Close modal when clicking close button or outside the image
+    closeButton.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    }
+
+    // Add stagger effect to images on page load
+    images.forEach((img, index) => {
+        img.parentElement.style.animation = `fadeIn 0.5s ease forwards ${index * 0.2}s`;
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+</script>
+</body>
+</html>
